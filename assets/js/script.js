@@ -34,10 +34,12 @@ $.ajax({
           ext = re.exec(val.name)[1];
             //Verifie si l'extension est défini
             if (ext=='html' ||ext=='php' ||ext=='css' ||ext=='js' ||ext=='png' ||ext=='jpg' ||ext=='jpeg' ||ext=='svg' ||ext=='gif' ||ext=='psd' ||ext=='ai' ||ext=='mp3' ||ext=='wma' ||ext=='wav' ||ext=='mp4' ||ext=='avi' ||ext=='wmv' ||ext=='mov' ||ext=='mkv' ||ext=='flv' ||ext=='pdf' ||ext=='rar' ||ext=='zip' ||ext=='ttf' ||ext=='otf' ||ext=='eot' ||ext=='woff') {
-               fileDiv = fileDiv.replace('laclassdelimage', ext);
+               fileDiv = fileDiv.replace('{{file}}', "assets/img/fileico/"+ext+".png");
             }
           chemin = val.path.substr(27);
           fileDiv = fileDiv.replace('leliendutruc', chemin);
+          fileDiv = fileDiv.replace('{{file}}', "assets/img/fileico/_blank.png");
+
 
           //envoi le bordel dans le html
           htmlcontainer += fileDiv;
