@@ -1,0 +1,245 @@
+/*body {
+    font-family: sans-serif;
+    background-color: #201214;
+    width: 95%;
+
+    margin: 2%;
+
+}
+
+#tophere {
+    margin-top: 3%;
+    background-color: #402428;
+    padding: 4% 7% 4% 0%;
+    color: white;
+    word-spacing: 12px;
+
+}
+
+.direction{
+    margin-left: 6%;
+    display: inline-block;
+
+
+}
+
+.folderName {
+    font-size: 28px;
+    text-transform: uppercase;
+
+}
+a:link {
+    color: white;
+    text-decoration: none;
+}
+.et {
+      font-size: 30px;
+    font-weight: bold;
+}
+
+.search {
+    text-align: right;
+    clear: both;
+    float: right;
+    margin-right: 8%;
+
+}
+
+.search img {
+    width: 10%;
+}
+
+#container {
+    margin-top: 2%;
+    text-overflow: ellipsis;
+}
+
+
+.box-file, .box-folder {
+    display: inline-block;
+    background-color: #402428;
+  	margin:1.5% 1% 1% 1%;
+    width: 25%;
+    height: 5em;
+    padding: 2%;
+
+}
+.box-file img {
+    width:30%;
+    float: left;
+    display: inline-block;
+
+
+}
+
+.box-folder img {
+    width: 28%;
+    float: left;
+    display: inline-block;
+}
+
+.type {
+
+}
+
+.name {
+    color: white;
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 57%;
+    padding-left: 41%;
+    letter-spacing: 1px;
+    display: block;
+    overflow: hidden;
+    margin-top: 5%;
+
+}
+
+.number {
+    font-size: 15px;
+    color: rosybrown;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 57%;
+    padding-left: 41%;
+    letter-spacing: 0.1em;
+    display: block;
+    overflow: hidden;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.size {
+    font-size: 15px;
+    color: rosybrown;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 57%;
+    font-weight: bold;
+    padding-left: 41%;
+    letter-spacing: 0.1em;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 5%;
+}
+
+
+.path {
+    font-size: 15px;
+    margin-left: 12%;
+    color: rosybrown;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 57%;
+    padding-left: 41%;
+    letter-spacing: 0.1em;
+    display: block;
+    overflow: hidden;
+    margin-top: 5%;
+
+}
+
+.laclassdelimage{
+    background-image: url('../img/default.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+.folder {
+    background-image: url('../img/folder.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+}
+
+.html{
+    background-image: url('../img/html.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+}
+
+.php{
+    background-image: url('../img/php.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+}
+
+.css{
+    background-image: url('../img/css.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+.js{
+    background-image: url('../img/js.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+.png .jpg .jpeg .svg .gif {
+    background-image: url('../img/img.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+.psd .ai{
+    background-image: url('../img/adobe.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+.mp3 .wma .wav{
+    background-image: url('../img/music.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+.mp4 .avi .wmv .mov .mkv .flv{
+    background-image: url('../img/video.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+
+.pdf{
+    background-image: url('../img/pdf.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+}
+
+.rar .zip{
+    background-image: url('../img/zip.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+
+
+}
+
+.ttf .otf .eot .woff{
+    background-image: url('../img/font.png');
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position: 13%;
+}*/
