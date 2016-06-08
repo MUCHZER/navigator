@@ -1,69 +1,8 @@
-
-
-
-/*
-*   PAS AJAX SET LA BASE DE LA PAGE
-*
-*
-*/
-
-
 //SI READY COMMENCE
-$('#folder').ready(function() {
+$('#folder').ready(getPath(''))
 
   // DEFINI DATA
   var data = $('#folder > span').html();
-
-$.ajax({
-  type: 'GET',
-  url: 'navigator.php',
-  data: data,
-  dataType: 'json',
-  success: function(data) {
-
-    var htmlcontainer = '';
-
-    $.each( data.items, function( key, val ) {
-
-        //verifie si val de dataitem est un fichier
-        if (val.type == 'file') {
-          fileDiv = $(' #templatefile ').html().trim();
-          fileDiv = fileDiv.replace(/{{fichier}}/g, val.name);
-          fileDiv = fileDiv.replace(/{{taille}}/g, bytesToSize(val.size));
-          re = /(?:\.([^.]+))?$/;
-          ext = re.exec(val.name)[1];
-            //Verifie si l'extension est défini
-            if (ext=='html' ||ext=='php' ||ext=='css' ||ext=='js' ||ext=='png' ||ext=='jpg' ||ext=='jpeg' ||ext=='svg' ||ext=='gif' ||ext=='psd' ||ext=='ai' ||ext=='mp3' ||ext=='wma' ||ext=='wav' ||ext=='mp4' ||ext=='avi' ||ext=='wmv' ||ext=='mov' ||ext=='mkv' ||ext=='flv' ||ext=='pdf' ||ext=='rar' ||ext=='zip' ||ext=='ttf' ||ext=='otf' ||ext=='eot' ||ext=='woff') {
-               fileDiv = fileDiv.replace('{{file}}', "assets/img/fileico/"+ext+".png");
-            }
-          chemin = val.path.substr(27);
-          fileDiv = fileDiv.replace('leliendutruc', chemin);
-          fileDiv = fileDiv.replace('{{file}}', "assets/img/fileico/_blank.png");
-
-
-          //envoi le bordel dans le html
-          htmlcontainer += fileDiv;
-        }
-
-        //sinon c'est un dossier
-        else {
-          fileDiv = $(' #templatefolder ').html().trim();
-          fileDiv = fileDiv.replace(/{{dossier}}/g, val.name);
-          //envoi le bordel dans le html
-          htmlcontainer += fileDiv;
-        }
-      }
-    );
-    $(' #container ').html(htmlcontainer);
-
-
-  },
-  error: function() {
-    alert('lol=' + id);
-  }
-});
-});
-
 
         function getPath(data) {
 
@@ -76,6 +15,16 @@ $.ajax({
               success: function(data) {
 
                 var htmlcontainer = '';
+                    navbar = '';
+
+
+                if (data != '') {
+                  linkDiv = $('#templatelink').html().trim();
+                  chemin = data.path.substr(27);
+                  linkDiv = linkDiv.replace(/{{back}}/g, chemin);
+                  navbar += linkDiv;
+               }
+
 
                 $.each( data.items, function( key, val ) {
 
@@ -85,38 +34,52 @@ $.ajax({
                       fileDiv = fileDiv.replace(/{{taille}}/g, bytesToSize(val.size));
                       re = /(?:\.([^.]+))?$/;
                       ext = re.exec(val.name)[1];
-                      //Verifie si l'extension est défini
-                      if (ext=='html' ||ext=='php' ||ext=='css' ||ext=='js' ||ext=='png' ||ext=='jpg' ||ext=='jpeg' ||ext=='svg' ||ext=='gif' ||ext=='psd' ||ext=='ai' ||ext=='mp3' ||ext=='wma' ||ext=='wav' ||ext=='mp4' ||ext=='avi' ||ext=='wmv' ||ext=='mov' ||ext=='mkv' ||ext=='flv' ||ext=='pdf' ||ext=='rar' ||ext=='zip' ||ext=='ttf' ||ext=='otf' ||ext=='eot' ||ext=='woff') {
-                         fileDiv = fileDiv.replace('laclassdelimage', ext);
+                      //Verifie l'extension
+                      if (ext=="svg" || ext=="png" || ext=="jpg" || ext=="gif") {
+                        fileDiv = fileDiv.replace(/{{file}}/g, "fa-file-image-o");
                       }
+                      if (ext=="php" || ext=="html" || ext=="sql" || ext=="py" || ext=="css" || ext=="js") {
+                        fileDiv = fileDiv.replace(/{{file}}/g, "fa-file-code-o");
+                      }
+                      if (ext=="txt" || ext=="docx") {
+                        fileDiv = fileDiv.replace(/{{file}}/g, "fa-file-text-o");
+                      }
+                      if (ext=="zip" || ext=="rar" || ext=="jar" || ext=="tar" || ext=="7zip") {
+                        fileDiv = fileDiv.replace(/{{file}}/g, "fa-file-archive-o");
+                      }
+                      if (ext=="pdf") {
+                        fileDiv = fileDiv.replace(/{{file}}/g, "fa-file-pdf-o");
+                      }
+                      else {
+                        fileDiv = fileDiv.replace(/{{file}}/g, "fa-file-o");
+                      }
+
                       chemin = val.path.substr(27);
-                      fileDiv = fileDiv.replace('leliendutruc', chemin);
+                      fileDiv = fileDiv.replace(/{{chemin}}/g, chemin);
                       htmlcontainer += fileDiv;
                     } else {
                       fileDiv = $(' #templatefolder ').html().trim();
                       fileDiv = fileDiv.replace(/{{dossier}}/g, val.name);
                       chemin = val.path.substr(27);
                       fileDiv = fileDiv.replace(/{{chemin}}/g, chemin);
-
-
+                      fileDiv = fileDiv.replace(/{{file}}/g, "fa-folder-open-o");
                       htmlcontainer += fileDiv;
+
+
                     }
                   }
                 );
                 $(' #container ').html(htmlcontainer);
+                $('#navbar').html(navbar);
 
 
               },
               error: function() {
-                alert('lol=' + id);
+                alert('lol');
               }
             });
 
         } // fin on click
-
-
-
-
 
 
 

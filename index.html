@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" title="CSS" href="assets/css/styles.css"/>
@@ -16,34 +16,66 @@
 
 
   <body>
-    <div id="tophere">
-      <div class="direction">
-        <a onclick="getPath('/');">ROOT</a>
-        <a style="display: none;" id="{{dossier}}">{{dossier}}</a>
-      </div>
-    </div>
+    <div class="container">
 
-    <div id="container">
-    </div>
+      <!--<div id="direction" class="nav navbar-default">
+        <li><a onclick="getPath('/');">HOME</a><li>
+      </div>-->
+
+      <img id="logo" class="img-responsive" src="assets/img/navigator.svg" alt="navigator" />
+
+      <nav id="navbar" class="text-center">
+
+      </nav>
+
+    <ul class="media-list centered" id="container">
+
+
+    </ul>
+
+  </div>
 
     <div id="templatefile" style="display: none;">
-      <div class="box-file laclassdelimage" id="file">
-        <span class="name" id="{{fichier}}">{{fichier}}</span>
-        <span class="size" id="size">{{taille}}</span>
+      <div class="col-sm-6 col-md-2">
+        <div class="thumbnail">
+          <li class="media">
+            <div class="media-left"><span class="fa {{file}} fa-4x"></span></div>
+            <div class="media-body" id="file">
+              <span class="name" id="{{fichier}}">{{fichier}}</span>
+              <span class="size" id="size">{{taille}}</span>
+            </div>
+          </li>
+        </div>
       </div>
     </div>
 
     <div id="templatefolder" style="display: none;">
-      <div onclick="getPath( '{{chemin}}' );" class="box-folder folder" id="folder">
-        <span class="name" id="{{dossier}}">{{dossier}}</span>
+      <div class="col-sm-6 col-md-2">
+        <div class="thumbnail">
+
+        <li onclick="getPath( '{{chemin}}' );" class="media">
+            <div class="media-left"><span class="fa {{file}} fa-4x"></span></div>
+            <div class="media-body">
+              <span class="name" id="{{dossier}}">{{dossier}}</span>
+            </div>
+        </li>
+
+      </div>
       </div>
     </div>
 
+    <div id="templatelink" style="display: none;">
+      <button type="button" onclick="getPath('/');" class="btn btn-default btn-lg"><i class="fa fa-home" aria-hidden="true"></i> HOME</button>
+      <button type="button"  onclick="getPath('{{back}}/..');" class="btn btn-default btn-lg"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> BACK</button>
+      <hr>
+    </div>
+
+
   </body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/assets/js/script.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
 
 </html>
