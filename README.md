@@ -10,6 +10,8 @@ Copy files in your webserver
 ### Experimental
 This project is totally experiemental, the code need refactoring and comments!
 
+### Logo
 
+Aligator is from http://www.vecteezy.com/members/eryprihananto
 
 
