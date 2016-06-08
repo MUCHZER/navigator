@@ -1,4 +1,4 @@
-![Navigator logo](https://raw.githubusercontent.com/MUCHZER/navigator/master/assets/img/navigator.svg)
+![Navigator logo](http://i.imgur.com/ynspsqj.png)
 
 
 ### Resume
