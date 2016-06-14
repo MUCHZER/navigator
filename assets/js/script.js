@@ -1,3 +1,12 @@
+$(window).load(function(){
+   // PAGE IS FULLY LOADED
+   // FADE OUT YOUR OVERLAYING DIV
+  
+   $('#loading').fadeOut();
+   $('#container').fadeIn(2000);
+});
+
+
 //SI READY COMMENCE
 $('#folder').ready(getPath(''))
 
@@ -71,15 +80,17 @@ $('#folder').ready(getPath(''))
                 );
                 $(' #container ').html(htmlcontainer);
                 $('#navbar').html(navbar);
+                $('[data-toggle="tooltip"]').tooltip();
+
 
 
               },
               error: function() {
-                alert('lol');
               }
             });
 
         } // fin on click
+
 
 
 

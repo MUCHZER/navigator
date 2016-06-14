@@ -18,9 +18,7 @@
   <body>
     <div class="container">
 
-      <!--<div id="direction" class="nav navbar-default">
-        <li><a onclick="getPath('/');">HOME</a><li>
-      </div>-->
+
 
       <img id="logo" class="img-responsive" src="assets/img/navigator.svg" alt="navigator" />
 
@@ -35,32 +33,54 @@
 
   </div>
 
+
+  <footer>
+
+
+  </footer>
+
+
+  <!-- TEMPLATE -->
+
     <div id="templatefile" style="display: none;">
       <div class="col-sm-6 col-md-2">
-        <div class="thumbnail">
+        <div class="well" data-toggle="tooltip" data-placement="top" title="{{fichier}}">
+
           <li class="media">
             <div class="media-left"><span class="fa {{file}} fa-4x"></span></div>
             <div class="media-body" id="file">
-              <span class="name" id="{{fichier}}">{{fichier}}</span>
-              <span class="size" id="size">{{taille}}</span>
+              <small class="name" id="{{fichier}}">{{fichier}}</small><br>
+              <small class="size" id="size">{{taille}}</small>
+            </div>
+            <div class="pull-right">
+              <a href="{{chemin}}"><span class="label label-success">View</span></a>
+              <a download href="{{chemin}}"><span class="label label-warning">Download</span></a>
             </div>
           </li>
+
         </div>
       </div>
     </div>
 
-    <div id="templatefolder" style="display: none;">
-      <div class="col-sm-6 col-md-2">
-        <div class="thumbnail">
 
-        <li onclick="getPath( '{{chemin}}' );" class="media">
+
+    <div id="templatefolder" style="display: none;">
+      <div class="box col-sm-6 col-md-2">
+        <div class="well" data-toggle="tooltip" data-placement="top" data-title="{{dossier}}">
+
+        <li class="media">
+            <div onclick="getPath( '{{chemin}}' );">
             <div class="media-left"><span class="fa {{file}} fa-4x"></span></div>
             <div class="media-body">
               <span class="name" id="{{dossier}}">{{dossier}}</span>
             </div>
+            <div class="pull-right">
+              <a href="{{chemin}}"><span class="label label-success">Open index</span></a>
+            </div>
+          </div>
         </li>
 
-      </div>
+        </div>
       </div>
     </div>
 
