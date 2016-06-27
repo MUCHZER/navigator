@@ -1,14 +1,14 @@
 $(window).load(function(){
    // PAGE IS FULLY LOADED
    // FADE OUT YOUR OVERLAYING DIV
-  
+
    $('#loading').fadeOut();
    $('#container').fadeIn(2000);
 });
 
 
 //SI READY COMMENCE
-$('#folder').ready(getPath(''))
+$('#folder').ready(getPath(''));
 
   // DEFINI DATA
   var data = $('#folder > span').html();

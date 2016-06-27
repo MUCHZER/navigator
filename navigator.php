@@ -1,12 +1,21 @@
 <?php
 
+// init var
 $nav = "/".$_REQUEST['l'];
-
 $dir = '/var/www/html/student/leog'.$nav;
 
-$response = scan($dir);
+// returned var
+$response = viewFiles($dir);
 
-function scan($dir){
+
+
+/*
+
+	Scan $dir and return a json file
+
+*/
+
+function viewFiles($dir){
 
 	$files = array();
 
@@ -14,46 +23,49 @@ function scan($dir){
 
 		foreach(scandir($dir) as $f) {
 
-			if(!$f || $f[0] == '.') {
-				continue;
-			}
+			//  Cache les fichers cachées
+			// if(!$f || $f[0] == '.') {
+			// 	continue;
+			// }
 
-			if(is_dir($dir . '/' . $f)) {
-
-
+			if(is_dir($dir.'/'.$f)) {
 
 				$files[] = array(
 					"name" => $f,
 					"type" => "folder",
-					"path" => $dir . '/' . $f,
+					"path" => $dir.'/'.$f,
 				);
 			}
 
 			else {
 
-
-
 				$files[] = array(
 					"name" => $f,
 					"type" => "file",
-					"path" => $dir . '/' . $f,
-					"size" => filesize($dir . '/' . $f)
+					"path" => $dir.'/'.$f,
+					"size" => filesize($dir.'/'.$f)
 				);
 			}
 		}
-
 	}
 
 	return $files;
-}
+} // /viewFiles end.
 
 
+
+
+/*
+
+	Encode the fson file
+
+*/
 
 header('Content-type: application/json');
 
 echo json_encode(array(
-	"name" => substr($dir,  22),
+	"name" => substr($dir, 22),
 	"type" => "folder",
-	"path" => $dir,
-	"items" => $response
+	"path" => htmlentities($dir),
+	"items" => htmlentities($response)
 ));
