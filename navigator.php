@@ -17,7 +17,7 @@ $response = viewFiles($dir);
 
 function viewFiles($dir){
 
-	$files = array();
+	$files = [];
 
 	if(file_exists($dir)){
 
@@ -30,21 +30,21 @@ function viewFiles($dir){
 
 			if(is_dir($dir.'/'.$f)) {
 
-				$files[] = array(
+				$files[] = [
 					"name" => $f,
 					"type" => "folder",
 					"path" => $dir.'/'.$f,
-				);
+				];
 			}
 
 			else {
 
-				$files[] = array(
+				$files[] = [
 					"name" => $f,
 					"type" => "file",
 					"path" => $dir.'/'.$f,
 					"size" => filesize($dir.'/'.$f)
-				);
+				];
 			}
 		}
 	}
@@ -63,9 +63,9 @@ function viewFiles($dir){
 
 header('Content-type: application/json');
 
-echo json_encode(array(
+echo json_encode([
 	"name" => substr($dir, 22),
 	"type" => "folder",
 	"path" => htmlentities($dir),
 	"items" => htmlentities($response)
-));
+]);
