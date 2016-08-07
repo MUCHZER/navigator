@@ -1,12 +1,3 @@
-$(window).load(function(){
-   // PAGE IS FULLY LOADED
-   // FADE OUT YOUR OVERLAYING DIV
-
-   $('#loading').fadeOut();
-   $('#container').fadeIn(2000);
-});
-
-
 //SI READY COMMENCE
 $('#folder').ready(getPath(''));
 
@@ -40,7 +31,7 @@ $('#folder').ready(getPath(''));
                     if (val.type == 'file') {
                       fileDiv = $(' #templatefile ').html().trim();
                       fileDiv = fileDiv.replace(/{{fichier}}/g, val.name);
-                      fileDiv = fileDiv.replace(/{{taille}}/g, bytesToSize(val.size));
+                      fileDiv = fileDiv.replace(/{{taille}}/g, val.size);
                       re = /(?:\.([^.]+))?$/;
                       ext = re.exec(val.name)[1];
                       //Verifie l'extension
@@ -92,12 +83,3 @@ $('#folder').ready(getPath(''));
         } // fin on click
 
 
-
-
-// converti les octay en kilooctay
-function bytesToSize(size) {
-  var format = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-  if (size == 0) return '0 Bytes';
-  var i = parseInt(Math.floor(Math.log(size) / Math.log(1024)));
-  return Math.round(size / Math.pow(1024, i), 2) + ' ' + format[i];
-}
