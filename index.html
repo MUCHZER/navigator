@@ -3,8 +3,17 @@
 <html>
   <head>
 
-    <meta charset="utf-8">
+    <meta charset="utf-8">   
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -18,26 +27,17 @@
   <body>
     <div class="container">
 
+		<div id="head">
+	    	<img id="logo" height="100vh" class="img-responsive" src="assets/img/navigator.svg" alt="navigator" />
+			<p id="desc" class="text-center" hidden> Made by <a href="https://github.com/MUCHZER">MUCHZER</a></p>
+		</div>
+		<div id="content">
+	    	<nav id="navbar" class="text-center"></nav>
+	    	<ul class="media-list centered" id="container"></ul>
+		</div>
+  	</div>
 
-
-      <img id="logo" class="img-responsive" src="assets/img/navigator.svg" alt="navigator" />
-
-      <nav id="navbar" class="text-center">
-
-      </nav>
-
-    <ul class="media-list centered" id="container">
-
-
-    </ul>
-
-  </div>
-
-
-  <footer>
-
-
-  </footer>
+  	<footer></footer>
 
 
   <!-- TEMPLATE -->
@@ -49,7 +49,7 @@
           <li class="media">
             <div class="media-left"><span class="fa {{file}} fa-4x"></span></div>
             <div class="media-body" id="file">
-              <small class="name" id="{{fichier}}">{{fichier}}</small><br>
+              <small class="name" id="{{fichier}}">{{fichier}}</small>
               <small class="size" id="size">{{taille}}</small>
             </div>
             <div class="pull-right">
@@ -86,7 +86,7 @@
 
     <div id="templatelink" style="display: none;">
       <button type="button" onclick="getPath('/');" class="btn btn-default btn-lg"><i class="fa fa-home" aria-hidden="true"></i> HOME</button>
-      <button type="button"  onclick="getPath('{{back}}/..');" class="btn btn-default btn-lg"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> BACK</button>
+      <button type="button"  onclick="getPath('{{back}}');" class="btn btn-default btn-lg"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> BACK</button>
       <hr>
     </div>
 

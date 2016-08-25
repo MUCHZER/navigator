@@ -80,7 +80,7 @@ function bytesToHuman($bytes, $decimals = 2)
 header('Content-type: application/json');
 
 echo json_encode([
-    "name" => $dir,
+    "name" => htmlentities($dir),
     "type" => "folder",
     "path" => htmlentities($dir),
     "items" => $response

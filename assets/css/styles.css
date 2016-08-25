@@ -1,3 +1,4 @@
 #logo {
   margin: 50px auto;
+  transition: all ease-in 0.2s;
 }
