@@ -1,7 +1,7 @@
 <?php
 
 // init var
-$nav = "/" . $_REQUEST['l'];
+$nav = "" . $_REQUEST['l'];
 $dir = __DIR__ . $nav;
 
 
@@ -28,10 +28,10 @@ function viewFiles($dir)
         foreach (scandir($dir) as $f) 
         {
 
-            //  Cache les fichers cachées
-            // if(!$f || $f[0] == '.') {
-            // 	continue;
-            // }
+            // Cache les fichers cachées
+            if(!$f || $f[0] == '.') {
+                continue;
+            }
 
             if (is_dir($dir . '/' . $f)) 
             {
@@ -39,6 +39,7 @@ function viewFiles($dir)
                 $files[] = [
                     "name" => htmlentities($f),
                     "type" => "folder",
+                    "filepath" => htmlentities( str_replace(__DIR__, '', $dir . '/' . $f) ),
                     "path" => htmlentities($dir . '/' . $f)
                 ];
             } 
@@ -73,6 +74,11 @@ function bytesToHuman($bytes, $decimals = 2)
     return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$sz[$factor];
 }
 
+function basepath() 
+{
+    return __DIR__;
+}
+
 
 /**
  * Return json file
@@ -80,6 +86,7 @@ function bytesToHuman($bytes, $decimals = 2)
 header('Content-type: application/json');
 
 echo json_encode([
+    "basepath" => basepath(),
     "name" => htmlentities($dir),
     "type" => "folder",
     "path" => htmlentities($dir),
